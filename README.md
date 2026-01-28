@@ -23,17 +23,29 @@ Two very work-in-progress documents:
 
 Participating SADPs will have accounts and credentials for a test environment. The instance will use production data and sync roughly daily. SADPs will only be permitted to [add (PUT) SADP information](https://cveawg.mitre.org/api-docs/#/CVE%20Record/cveAdpUpdateSingle) to existing CVE Records and manage users for their SADP organizations.
 
-We have not yet decided when (or even if) to shift from the test to production environments, but the plan is to shift the pilot to production.
+We have not yet decided when (or even if) to shift from the test to production environments, but the plan is to shift the pilot to production. Before providing production SADP information, participants MUST demonstrate their capability in the test environment.
 
 ## Required SADP Information
 
-The point of SADP is for downstream Supplier CNAs to provide information about their Products with respect to an existing Vulnerability in an upstream Product. As such, the follwing information MUST be provided in an SADP container.
+The point of SADP is for downstream Supplier CNAs to provide information about their Products with respect to an existing Vulnerability in an upstream Product. As such, the follwing information MUST be provided in an SADP container. Consumers must be able to tell that an ADP container is an *S*ADP container, which means that the SADP information is related the SADP's use of (dependency on) the affected Products in the CNA container.
+
+If an ADP container type (and/or `shortName`) indicates Supplier, then the Products in the ADP container use or depend on the Products in the CNA container and the status information is scoped to whether and to what extent the downstream (SADP) Products are affected by the upstream (CNA) Products.
+
+If ADP (container) type is suppler, then ADP.affected child_of CNA.affected.
 
 #### ADP Metadata
+
 `containers.adp[].providerMetadata`
 
+`containers.adp[].providerMetadata.x_adpType` with the value: `supplier`.  This would require a future CVE Record Format change and would support other types of ADP such as `enricher`. Another option is to overload `.containers.adp.providerMetadata.shortName` with a string like `"${shortName}-SADP"`.
+
 #### Product Status
+
 `containers.adp[].affected`
+
+#### Product Status Reference
+
+As an alternative to providing product status within the their container, an SADP MAY instead provide a reference to external product status. The format of this reference has not been determined yet. One simple option is a reference URL with a new type (add example). It may be better, or even necessary, to develop a more robust reference schema, more aligned with this [RFD about assertions](https://github.com/CVEProject/cve-schema/pull/472) (add example).
 
 ## Optional SADP Information
 
@@ -64,3 +76,7 @@ Q4. A big assumption behind VEX and SADP is that consumers of (CVE) dependency-r
 Q5. How do we measure the results (success, failure)?
 
 Q6. Should the CVE Program shift the SADP pilot into full production? How does the Program make this decision?
+
+Q7. How long will the Pilot run?
+
+A7. Estimates: Test period in February and March 2026, production for three months, then a formal review leading to a decision whether and how to continue.
