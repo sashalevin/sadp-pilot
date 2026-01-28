@@ -31,8 +31,6 @@ The point of SADP is for downstream Supplier CNAs to provide information about t
 
 If an ADP container type (and/or `shortName`) indicates Supplier, then the Products in the ADP container use or depend on the Products in the CNA container and the status information is scoped to whether and to what extent the downstream (SADP) Products are affected by the upstream (CNA) Products.
 
-If ADP (container) type is suppler, then ADP.affected child_of CNA.affected.
-
 #### ADP Metadata
 
 `containers.adp[].providerMetadata`
@@ -80,3 +78,7 @@ Q6. Should the CVE Program shift the SADP pilot into full production? How does t
 Q7. How long will the Pilot run?
 
 A7. Estimates: Test period in February and March 2026, production for three months, then a formal review leading to a decision whether and how to continue.
+
+Q8. How do I know if a CVE Record has SADP information?
+
+A8. First, check the Record for an ADP container of type `supplier` (and/or `shortName` ends with `-SADP`). Second, we plan to provide a running list of CVE IDs that have SADP containers.
