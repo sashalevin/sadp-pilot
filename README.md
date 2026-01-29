@@ -4,20 +4,21 @@
 
 This repository documents the Supplier-as-ADP Pilot project. This README and other documentation should be considered works-in-progress and are likely to be incomplete.
 
-## Status
+## Status and Schedule
 
-Expected CVE test environment in early February 2026.
+Subject to change.
+
+Test environment available in early February 2026.
+
+SADP in production sometime in March 2026.
+
+"Formally" review the pilot in July 2026. This period would catch April and July quarterly update cycles and four monthly update cycles.
+
+This formal review should support a Program decision whether and how to continue SADP.
 
 ## Background
 
 Software is made of other software. When the upstream software has a vulnerability, it'd be nice to know if and to what extent downstream software is affected, and what to do about it. This SADP pilot is a way for the CVE Program to decide if and how to support status information about downstream inheritance of upstream vulnerabilities. While not strictly planning to implement [Vulnerability Exploitability eXchange (VEX)](https://github.com/CVEProject/sadp-pilot/blob/main/README.md), the SADP pilot will essentially implement VEX, or at least meet the material [requirements](https://github.com/SBOM-Community/documents/blob/main/README.md#minimum-requirements-for-vex) of VEX.
-
-Two very work-in-progress documents:
-
-* [Supplier-CNA-as-ADP Pilot Overview](https://docs.google.com/document/d/1JLF5vj_8W7KVeqJNhQl8Fj7PLv-ujbqMLTU6LtDlmvI)
-* [Supplier-CNA-as-ADP Pilot](https://docs.google.com/document/d/1u2qKAYo7AYOCDYVv1Le58kv5YpzHBsrwuib7OPY-YyU)
-
-[Slides](https://youtu.be/dBtlUz0kUww?si=-YVCs_omWkLost_4) from the 2025 CVE Program Technical Workshop.
 
 ## Test CVE Services SADP Pilot Environment
 
@@ -81,4 +82,13 @@ A7. Estimates: Test period in February and March 2026, production for three mont
 
 Q8. How do I know if a CVE Record has SADP information?
 
-A8. First, check the Record for an ADP container of type `supplier` (and/or `shortName` ends with `-SADP`). Second, we plan to provide a running list of CVE IDs that have SADP containers.
+A8. First, check the Record for an ADP container of [`"x_adpType": "supplier"`](https://github.com/CVEProject/sadp-pilot/blob/740d3bd121dbd1b92ca3c16eb65dd749bb62914b/CVE-2025-14174_sadp.json#L61) (and/or [`shortName` ends with `-SADP`](https://github.com/CVEProject/sadp-pilot/blob/740d3bd121dbd1b92ca3c16eb65dd749bb62914b/CVE-2025-14174_sadp.json#L125)). Second, we plan to provide a running list of CVE IDs that have SADP containers.
+
+## References
+
+Two very work-in-progress documents:
+
+* [Supplier-CNA-as-ADP Pilot Overview](https://docs.google.com/document/d/1JLF5vj_8W7KVeqJNhQl8Fj7PLv-ujbqMLTU6LtDlmvI)
+* [Supplier-CNA-as-ADP Pilot](https://docs.google.com/document/d/1u2qKAYo7AYOCDYVv1Le58kv5YpzHBsrwuib7OPY-YyU)
+
+[Slides](https://youtu.be/dBtlUz0kUww?si=-YVCs_omWkLost_4) from the 2025 CVE Program Technical Workshop.
