@@ -59,12 +59,15 @@ Here ([CVE-2025-14174](https://github.com/CVEProject/sadp-pilot/blob/main/CVE-20
 
 CVE consumers should expect to see SADP containers provided by these Supplier participants subject to their defined scopes.
 
+(This table is incomplete!)
+
 | Participant | Scope | Examples |
 | :--- | :--- | :--- |
 | HeroDevs | .NET 6, others? | |
 | Microsoft | chromium, others? | |
 | Red Hat | lots of managed software packages | |
 | Oracle | ? | |
+| Siemens | ? | CVE-1900-1234 |
 
 In addition to these primary SADP content producers (downstream Suppliers), we have discussed SADP with upstream Suppliers and institutional CVE consumers, specifically vulnerability scanners (see [Q4](#q4)). We should also talk to vulnerability scanner users. We may solicit active participation from these types of organizations to help determine if SADP is useful (or harmful) and if changes are needed.
 
@@ -95,6 +98,10 @@ A7: Estimates: Test period in February and March 2026, production for ~four mont
 Q8: How do I know if a CVE Record has SADP information?
 
 A8: First, check the Record for an ADP container of [`"x_adpType": "supplier"`](https://github.com/CVEProject/sadp-pilot/blob/740d3bd121dbd1b92ca3c16eb65dd749bb62914b/CVE-2025-14174_sadp.json#L61) (and/or [`shortName` ends with `-SADP`](https://github.com/CVEProject/sadp-pilot/blob/740d3bd121dbd1b92ca3c16eb65dd749bb62914b/CVE-2025-14174_sadp.json#L125)). Second, we plan to provide a running list of CVE IDs that have SADP containers.
+
+Q9: What if information in an SADP container disagrees with information in the CNA container?
+
+A9: To some extent, this is expected and desirable, since the SADP's use of the upstream Product changes the context for the vulnerability.  CVSS, for example, [is designed to be reassessed in downstream uses](https://www.first.org/cvss/user-guide#Assessing-Vulnerabilities-in-Software-Libraries-and-Similar2:~:text=When%20assessing%20a%20vulnerability%20in%20a%20given%20implementation%20using%20the%20impacted%20library%2C%20the%20metric%20values%20must%20be%20re%2Dassessed%20for%20that%20specific%20implementation%2E). If the disagreement questions the vulnerability determination or CVE ID assignment, the parties must follow the [Dispute Policy](https://www.cve.org/Resources/General/Policies/CVE-Record-Dispute-Policy.pdf). The ADP (including SADP) capability may not be used to "hide" disputes.
 
 ## References
 
