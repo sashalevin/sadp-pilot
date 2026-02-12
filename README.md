@@ -86,7 +86,7 @@ It may be better, or even necessary, to develop a more robust reference schema, 
 
 Similar to the tags in the basic URL reference, `format` could be: `csaf-vex`, `openvex`, `cve`. 
 
-Note: Consider the [Assertion Framework](https://github.com/jayjacobs/cve-schema/blob/main/rfds/0000-assertion-framework.md) and Vulnerability Relationships RFDs. Also note [this issue](https://github.com/CVEProject/cve-schema/issues/318) to move away from using `x_`, although at the moment `x_` seems to be the only practical option. Any `x_` fields or values will be proposed as official CVE Record Format schema changes (removing the `x_`).
+Note: Consider the [Assertion Framework](https://github.com/jayjacobs/cve-schema/blob/main/rfds/0000-assertion-framework.md) and Vulnerability Relationships RFDs. Also note [this issue](https://github.com/CVEProject/cve-schema/issues/318) to move away from using `x_`, although at the present, `x_` seems to be the only practical option to test new (S)ADP fields and values. Any `x_` fields or values will be proposed as official CVE Record Format schema changes (removing the `x_`).
 
 ## Optional SADP Information
 
@@ -106,9 +106,9 @@ CVE consumers should expect to see SADP containers provided by these Supplier pa
 | :--- | :--- | :--- |
 | HeroDevs | .NET 6, others? | |
 | Microsoft | chromium, others? | |
-| Red Hat | lots of managed software packages | |
+| Red Hat | lots of managed software packages | [CVE-2026-23074](https://cveawg-adp-test.mitre.org/api/cve/CVE-2026-23074) |
 | Oracle | ? | |
-| Siemens | ? | CVE-2025-51591 |
+| Siemens | ? | [CVE-2025-51591](https://cveawg-adp-test.mitre.org/api/cve/CVE-2025-51591) |
 
 In addition to these primary SADP content producers (downstream Suppliers), we have discussed SADP with upstream Suppliers and institutional CVE consumers, specifically vulnerability scanners (see [Q4](#q4)). We should also talk to vulnerability scanner users. We may solicit active participation from these types of organizations to help determine if SADP is useful (or harmful) and if changes are needed.
 
