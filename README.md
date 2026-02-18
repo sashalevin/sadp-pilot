@@ -24,7 +24,9 @@ One expected use case is that vulnerability scanning and management could be imp
 
 ## Test CVE Services SADP Pilot Environment
 
-Participating SADPs will have accounts and credentials for a test environment. The instance will use production data and sync roughly daily. SADPs will only be permitted to [add (PUT) SADP information](https://cveawg.mitre.org/api-docs/#/CVE%20Record/cveAdpUpdateSingle) to existing CVE Records and manage users for their SADP organizations.
+Participating SADPs will have accounts and credentials for a test environment. The instance will use production data and sync roughly daily. SADPs will only be permitted to [add (PUT) SADP information](https://cveawg.mitre.org/api-docs/#/CVE%20Record/cveAdpUpdateSingle) to existing CVE Records and manage users for their SADP organizations.   A snapshot of test CVE Records that have been created by pilot participatns will be taken daily (on weekdays) and posted [here](https://github.com/CVEProject/sadp-pilot/tree/main/SADP_Records).   
+
+Note that SADP information in this repository are for test purposes only and will NOT be available in the [official CVE List](https://github.com/CVEProject/cvelistV5/tree/main/cves).
 
 We have not yet decided when (or even if) to shift from the test to production environments, but the plan is to shift the pilot to production. Before providing production SADP information, participants MUST demonstrate their capability in the test environment.
 
